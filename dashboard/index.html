@@ -163,44 +163,26 @@
         <div class="container-fluid">
           <div class="row d-flex align-items-md-stretch">
             <!-- To Do List-->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-6 col-md-12">
               <div class="card to-do">
-                <h2 class="display h4">To do List</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <ul class="check-lists list-unstyled">
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-1" name="list-1" class="form-control-custom">
-                    <label for="list-1">Similique sunt in culpa qui officia</label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-2" name="list-2" class="form-control-custom">
-                    <label for="list-2">Ed ut perspiciatis unde omnis iste</label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-3" name="list-3" class="form-control-custom">
-                    <label for="list-3">At vero eos et accusamus et iusto </label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-4" name="list-4" class="form-control-custom">
-                    <label for="list-4">Explicabo Nemo ipsam voluptatem</label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-5" name="list-5" class="form-control-custom">
-                    <label for="list-5">Similique sunt in culpa qui officia</label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-6" name="list-6" class="form-control-custom">
-                    <label for="list-6">At vero eos et accusamus et iusto </label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-7" name="list-7" class="form-control-custom">
-                    <label for="list-7">Similique sunt in culpa qui officia</label>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <input type="checkbox" id="list-8" name="list-8" class="form-control-custom">
-                    <label for="list-8">Ed ut perspiciatis unde omnis iste</label>
-                  </li>
-                </ul>
+                <h2 class="display h4">Containers</h2>
+		<p>TODO</p>
+			<table class="table table-dark table-striped">
+			<thead>
+				<tr>
+				<th>ID</th>
+				<th>Image</th>
+				<th>Ports</th>
+				</tr>
+			</thead>
+			<tbody id="dockerRunning">
+				<tr>
+					<td>123</td>
+					<td>Example</td>
+					<td>57</td>
+				</tr>
+			</tbody>
+			</table>
               </div>
             </div>
             <!-- Pie Chart-->
@@ -214,7 +196,7 @@
               </div>
             </div>
             <!-- Line Chart -->
-            <div class="col-lg-6 col-md-12 flex-lg-last flex-md-first align-self-baseline">
+            <div class="col-lg-3 col-md-6 flex-lg-last flex-md-first align-self-baseline">
               <div class="card sales-report">
                 <h2 class="display h4">Sales marketing report</h2>
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet officiis</p>
@@ -294,5 +276,23 @@
     <script src="https://d19m59y37dris4.cloudfront.net/dashboard/1-4-7/js/charts-home.js"></script>
     <!-- Main File-->
     <script src="https://d19m59y37dris4.cloudfront.net/dashboard/1-4-7/js/front.js"></script>
+
+	<script>
+		$.ajax({
+		  url: '/api/running',
+		  type: 'get',
+		  dataType: 'json',
+		  contentType: 'application/json',
+		  success: function (data) {
+			console.log("Hello world data", data);
+		  },
+		  error: function (err) {
+			console.log("ERROR", err);
+		  },
+		});
+	
+	</script>
+
+
   </body>
 </html>
