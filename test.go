@@ -20,7 +20,12 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Printf("%v\n", containers)
+
 	for _, container := range containers {
-		fmt.Println(container.ID)
+		fmt.Printf("Container=%s\n",
+			container.ID, 	// [0,12])
+
+			container.
 	}
 }
