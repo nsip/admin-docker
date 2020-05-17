@@ -35,5 +35,10 @@ func main() {
 		return c.JSON(http.StatusOK, doc.Containers)
 	})
 
+	e.GET("/api/images", func(c echo.Context) error {
+		doc.UpdateImages()
+		return c.JSON(http.StatusOK, doc.Images)
+	})
+
 	e.Logger.Fatal(e.Start(":8097"))
 }

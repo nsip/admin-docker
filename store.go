@@ -1,5 +1,10 @@
 package admindocker
 
+type AdminDockerImage struct {
+	ID      string
+	RepoTag string
+}
+
 type AdminDockerContainer struct {
 	ID    string
 	Image string
@@ -8,6 +13,7 @@ type AdminDockerContainer struct {
 
 type AdminDockerStore struct {
 	Containers []AdminDockerContainer
+	Images     []AdminDockerImage
 }
 
 // Create a new SIF client, which requires an environment URL
