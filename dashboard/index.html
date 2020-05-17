@@ -182,10 +182,39 @@
 					<td>Loading</td>
 					<td></td>
 				</tr>
-			</tbody>
-			</table>
+        			</tbody>
+        			</table>
               </div>
             </div>
+            <!-- To Do List-->
+            <div class="col-lg-6 col-md-12">
+              <div class="card to-do">
+                <h2 class="display h4">Images</h2>
+		<p>TODO</p>
+			<table class="table table-dark table-striped">
+			<thead>
+				<tr>
+				<th>ID</th>
+				<th>Name:Tag</th>
+				</tr>
+			</thead>
+			<tbody id="dockerImages">
+				<tr>
+					<td></td>
+					<td>Loading</td>
+				</tr>
+        			</tbody>
+        			</table>
+              </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+      <section class="dashboard-header section-padding">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-md-stretch">
             <!-- Pie Chart-->
             <div class="col-lg-3 col-md-6">
               <div class="card project-progress">
@@ -292,6 +321,28 @@
                         + "<td>" + d.ID.substr(0,4) + "</td>"
                         + "<td>" + d.Image + "</td>"
                         + "<td>" + d.Ports.join(",") + "</td>"
+                        + "</tr>"
+                    );
+                  });
+              }
+		  },
+		  error: function (err) {
+			console.log("ERROR", err);
+		  },
+		});
+
+		$.ajax({
+		  url: '/api/images',
+		  type: 'get',
+		  dataType: 'json',
+		  contentType: 'application/json',
+		  success: function (data) {
+              if (data) {
+    			  $('#dockerImages').empty();
+                  data.forEach(function(d) {
+        			$('#dockerImages').append("<tr>"
+                        + "<td>" + d.ID.substr(0,4) + "</td>"
+                        + "<td>" + d.RepoTag + "</td>"
                         + "</tr>"
                     );
                   });
