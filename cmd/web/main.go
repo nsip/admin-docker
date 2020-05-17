@@ -3,17 +3,19 @@ package main
 // Use api and Test
 import (
 	"fmt"
-	"github.com/nsip/sifclient-go"
+
 	// "encoding/xml"
 	"net/http"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	admindocker "github.com/nsip/admin-docker"
 )
 
 func main() {
-	fmt.Println("Starting HITS Proxy")
-	sifclient.Info()
+	fmt.Println("Starting ADMIN::DOCKER")
+
+	doc := admindocker.New()
 
 	e := echo.New()
 	e.Use(middleware.Logger())
@@ -29,7 +31,8 @@ func main() {
 	e.Static("/", "dashboard")
 
 	e.GET("/api/running", func(c echo.Context) error {
-		return c.JSONBlob(http.StatusOK, []byte("{\"message\":\"all is good\"}"))
+		doc.UpdateRunning()
+		return c.JSON(http.StatusOK, doc.Containers)
 	})
 
 	e.Logger.Fatal(e.Start(":8097"))
