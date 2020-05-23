@@ -6,5 +6,9 @@ while (1) {
 
     $COUNT++;
 
+	if ($COUNT > 10) {
+		exit 1;
+	}
+
     sleep 1;
 }
