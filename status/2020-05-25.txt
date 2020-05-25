@@ -1,0 +1,14 @@
+nias@ip-172-31-47-82:~/prometheus$ docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                PORTS                                                                NAMES
+06b33f31d2a8        grafana/grafana       "/run.sh"                3 days ago          Up 3 days             0.0.0.0:8099->3000/tcp                                               grafana
+09ff495626b8        metabase/metabase     "/app/run_metabase.sh"   3 days ago          Up 3 days             0.0.0.0:8013->3000/tcp                                               metabase
+4a0eb00bae31        prom/prometheus       "/bin/prometheus --c…"   5 days ago          Up 5 days             0.0.0.0:9090->9090/tcp                                               jolly_sutherland
+7ed3a3583ece        d62681053ba9          "/go/bin/adminaws"       6 days ago          Up 6 days             0.0.0.0:8098->8098/tcp                                               naughty_meninsky
+f9ed54015738        jc21/registry-ui      "/bin/sh -c 'node --…"   7 days ago          Up 7 days (healthy)   0.0.0.0:8095->80/tcp                                                 beautiful_dewdney
+b1f80b423d39        nsip/sif2json         "/go/bin/server"         7 days ago          Up 7 days             0.0.0.0:1324->1324/tcp                                               infallible_austin
+c14a6389c138        nsip/admindocker      "/go/bin/admindocker"    7 days ago          Up 7 days             0.0.0.0:8097->8097/tcp                                               determined_wing
+73e8b80f6598        jeffail/benthos       "/benthos -c /bentho…"   7 days ago          Up 7 days             4195/tcp                                                             modest_mayer
+455eb738748a        nats-streaming        "/nats-streaming-ser…"   7 days ago          Up 7 days             4222/tcp, 0.0.0.0:4223->4223/tcp, 8222/tcp, 0.0.0.0:8223->8223/tcp   optimistic_wiles
+2ed32da84d6c        nsip/hitsproxy        "/go/bin/hitsproxy"      7 days ago          Up 7 days             0.0.0.0:8089->8089/tcp                                               peaceful_tesla
+d20129c68bdc        registry:2            "/entrypoint.sh /etc…"   3 weeks ago         Up 3 weeks            0.0.0.0:5000->5000/tcp                                               registry
+1a0afc17b01b        jeffail/benthos-lab   "/benthos-lab --www …"   2 months ago        Up 2 months           0.0.0.0:8080->8080/tcp                                               gallant_curie
