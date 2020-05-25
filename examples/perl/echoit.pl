@@ -1,8 +1,15 @@
 #!/usr/bin/perl
+use Data::RandomPerson;
+my $randomperson = Data::RandomPerson->new();
 
 my $COUNT = 0;
 while (1) {
-    print "Hello world $COUNT\n";
+
+    my $r = $randomperson->create();
+    my $a = $r->{firstname};
+    my $b = $r->{lastname};
+
+    print "Hello world $COUNT $a $b\n";
 
     $COUNT++;
 
